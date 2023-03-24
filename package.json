@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
-    "build": "netlify deploy --prod"
+    "dev": "nodemon functions/api.js",
+    "deploy": "netlify deploy --prod"
   },
   "author": "",
   "license": "ISC",
