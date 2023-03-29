@@ -83,7 +83,7 @@ const PROVIDERS = [
     name: 'Defense Express',
     descripton:
       'Український військовий портал Defence Express - добірка найсвіжіших новин та аналітики по військовій тематиці. Статті експертів, описи озброєнь та багато іншого.',
-    url: 'https://defence-express.com/feed/',
+    url: 'https://defence-ua.com/rss/feed.xml',
     homepage: 'https://defence-ua.com',
     logo: 'https://defence-ua.com/images/favicon.png',
   },
