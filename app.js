@@ -23,6 +23,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
+
 app.get('/rss', async (req, res) => {
   const postLimit = req.query.limit || 10;
   const provider = req.query.provider;
