@@ -2,11 +2,10 @@
   "name": "my-news-be",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "deploy": "netlify deploy --prod"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "author": "Serhii Tyshchenko",
   "license": "ISC",
