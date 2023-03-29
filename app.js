@@ -1,27 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const parse = require('./parcer');
-const {decode} = require ('html-entities');
-
-const PROVIDER_TO_RSS_MAP = {
-  'censor': 'https://static.censor.net/censornet/rss/rss_uk_news.xml',
-  'lb': 'https://lb.ua/rss/ukr/news.xml',
-  'pravda': 'https://www.pravda.com.ua/rss/view_news/',
-  'nv': 'https://nv.ua/ukr/rss/all.xml',
-  'unian': 'https://www.unian.net/export/rss2/archive/index.xml',
-  'gordon': 'https://gordonua.com/export/rss2/all-news2.xml',
-  'korrespondent': 'https://korrespondent.net/rss/all.xml',
-  'tsn': 'https://tsn.ua/rss/all.xml',
-  'ukrinform': 'https://www.ukrinform.ua/rss/all.xml',
-  'zaxid': 'https://zaxid.net/rss/all.xml',
-  'militarnyj': 'https://mil.in.ua/uk/news/feed/',
-  'defence_ua': 'https://defence-ua.com/rss/feed.xml',
-  'espreso': 'https://espreso.tv/rss',
-  'gazeta': 'https://gazeta.ua/rss',
-  'unian': 'https://rss.unian.net/site/news_ukr.rss',
-  'obozrevatel': 'https://www.obozrevatel.com/ukr/out/rss/lastnews.xml',
-  'armyinform': 'https://armyinform.com.ua/feed/',
-};
+const { decode } = require('html-entities');
+const { PROVIDERS, DEFAULT_POST_LIMIT } = require('./src/common/constants');
+const { getProviderUrl } = require('./src/common/utils');
 
 const app = express();
 app.use(express.json());
@@ -32,10 +14,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/rss', async (req, res) => {
-  const postLimit = req.query.limit || 10;
+  const postLimit = req.query.limit || DEFAULT_POST_LIMIT;
   const provider = req.query.provider;
-  const rss = await parse(PROVIDER_TO_RSS_MAP[provider]);
-  const data = rss.items.slice(0, postLimit).map((item) => ({
+  const providerUrl = getProviderUrl(provider);
+  if (!providerUrl) {
+    res.status(400).send('Invalid provider');
+    return;
+  }
+  const response = await parse(providerUrl);
+  const data = response.items.slice(0, postLimit).map((item) => ({
     title: decode(item.title),
     link: item.link,
     created: item.created,
@@ -44,10 +31,13 @@ app.get('/rss', async (req, res) => {
   res.end();
 });
 
+app.get('/providers', async (req, res) => {
+  res.json(PROVIDERS);
+  res.end();
+});
+
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () =>
   console.log(`Server started on http://localhost:${PORT}`)
 );
-
-
