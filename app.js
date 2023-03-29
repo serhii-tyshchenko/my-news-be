@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const parse = require('./parcer');
+const parse = require('./src/parse');
 const { decode } = require('html-entities');
 const { PROVIDERS, DEFAULT_POST_LIMIT } = require('./src/common/constants');
 const { getProviderUrl } = require('./src/common/utils');
