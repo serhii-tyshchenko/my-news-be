@@ -1,7 +1,7 @@
 const express = require('express');
 const puppeteer = require('puppeteer');
 const cors = require('cors');
-const { parse } = require('rss-to-json');
+const parse = require('../parcer');
 
 const PROVIDERS = {
   CENSOR: {

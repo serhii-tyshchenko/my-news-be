@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { parse } = require('rss-to-json');
+const parse = require('./parcer');
 const {decode} = require ('html-entities');
 
 const PROVIDER_TO_RSS_MAP = {

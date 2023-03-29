@@ -1,7 +1,42 @@
-import { XMLParser } from 'fast-xml-parser';
-import axios from 'axios';
+const { XMLParser } = require('fast-xml-parser');
+const axios = require('axios');
 
-const parser = async (url, config) => {
+const normalizeDate = (date) => {
+  const daysMap = {
+    пн: 'Mon',
+    вт: 'Tue',
+    ср: 'Wed',
+    чт: 'Thu',
+    пт: 'Fri',
+    сб: 'Sat',
+    нв: 'Sun',
+  };
+  const monthsMap = {
+    січ: 'Jan',
+    лют: 'Feb',
+    бер: 'Mar',
+    мар: 'Mar',
+    кві: 'Apr',
+    тра: 'May',
+    чер: 'Jun',
+    лип: 'Jul',
+    сер: 'Aug',
+    вер: 'Sep',
+    жов: 'Oct',
+    лис: 'Nov',
+    гру: 'Dec',
+  };
+
+  const arrayToRegex = (arr) => new RegExp(Object.keys(arr).join("|"), 'gi');
+
+  const regexDays = arrayToRegex(daysMap);
+  const regexMonths = arrayToRegex(monthsMap);
+
+  const newDate = date.replace(regexDays, (match) => daysMap[match]).replace(regexMonths, (match) => monthsMap[match]);
+  return newDate;
+};
+
+const parse = async (url, config) => {
   if (!/(^http(s?):\/\/[^\s$.?#].[^\s]*)/i.test(url)) return null;
 
   const { data } = await axios(url, config);
@@ -54,7 +89,7 @@ const parser = async (url, config) => {
       created: val.updated
         ? Date.parse(val.updated)
         : val.pubDate
-        ? Date.parse(val.pubDate)
+        ? Date.parse(normalizeDate(val.pubDate))
         : val.created
         ? Date.parse(val.created)
         : Date.now(),
@@ -114,4 +149,4 @@ const parser = async (url, config) => {
   return rss;
 };
 
-export default parser;
+module.exports = parse;
