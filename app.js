@@ -17,6 +17,10 @@ const PROVIDER_TO_RSS_MAP = {
   'militarnyj': 'https://mil.in.ua/uk/news/feed/',
   'defence_ua': 'https://defence-ua.com/rss/feed.xml',
   'espreso': 'https://espreso.tv/rss',
+  'gazeta': 'https://gazeta.ua/rss',
+  'unian': 'https://rss.unian.net/site/news_ukr.rss',
+  'obozrevatel': 'https://www.obozrevatel.com/ukr/out/rss/lastnews.xml',
+  'armyinform': 'https://armyinform.com.ua/feed/',
 };
 
 const app = express();
