@@ -60,6 +60,26 @@ const PROVIDERS = [
     logo: 'https://cdn.obozrevatel.com/news/img/favicons/favicon.ico',
   },
   {
+    id: 'liga',
+    type: 'rss',
+    name: 'Ліга.net',
+    description:
+      'Війна Росії проти України: онлайн-хроніка, останні події на Донбасі. Головні новини України та світу на сайті ЛІГА.net',
+    url: 'https://www.liga.net/news/all/rss.xml',
+    homepage: 'https://www.liga.net',
+    logo: 'https://www.liga.net/design/images/favicon.ico',
+  },
+  {
+    id: 'rbc',
+    type: 'rss',
+    name: 'РБК-Україна',
+    description:
+      "Головні новини України та світу сьогодні, політичні та аналітичні статті, новини економіки та курси валют, інтерв'ю, точки зору, новини життя на порталі РБК-Україна.",
+    url: 'https://www.rbc.ua/static/rss/all.ukr.rss.xml',
+    homepage: 'https://www.rbc.ua',
+    logo: 'https://www.rbc.ua/static/news/imgs/favicon.ico',
+  },
+  {
     id: 'armyinform',
     type: 'rss',
     name: 'АрміяInform',
