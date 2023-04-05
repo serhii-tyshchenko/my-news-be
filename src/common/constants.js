@@ -78,6 +78,36 @@ const PROVIDERS = [
     logo: 'https://www.rbc.ua/static/news/imgs/favicon.ico',
   },
   {
+    id: 'gordon',
+    type: 'rss',
+    name: 'Гордон',
+    description:
+      'Головні новини України і світу, ексклюзивні коментарі, аналітика.',
+    url: 'https://gordonua.com/ukr/xml/rss_category/politics.html',
+    homepage: 'https://gordonua.com',
+    logo: 'https://gordonua.com/favicon.ico',
+  },
+  {
+    id: 'tsn',
+    type: 'rss',
+    name: 'ТСН',
+    description:
+      'Всі новини за останню добу. Найактуальніші новини 1+1 онлайн, політики, економіки, стилю та спорту на TSN.ua',
+    url: 'https://tsn.ua/rss/full.rss',
+    homepage: 'https://tsn.ua',
+    logo: 'https://tsn.ua/favicon.svg',
+  },
+  {
+    id: '5kanal',
+    type: 'rss',
+    name: '5 канал',
+    description:
+      'Актуальні, ексклюзивні та останні новини і відеосюжети, інтерв&#039;ю з цікавими людьми, політиками, зірками та багато іншого з життя України та світу',
+    url: 'https://www.5.ua/novyny/rss/',
+    homepage: 'https://5.ua',
+    logo: 'https://www.5.ua/img/favicon/favicon-32x32.png',
+  },
+  {
     id: 'armyinform',
     type: 'rss',
     name: 'АрміяInform',
