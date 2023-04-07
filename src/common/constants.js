@@ -98,7 +98,7 @@ const PROVIDERS = [
     logo: 'https://tsn.ua/favicon.svg',
   },
   {
-    id: '5kanal',
+    id: 'piatyi_kanal',
     type: 'rss',
     name: '5 канал',
     description:
