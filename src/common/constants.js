@@ -39,6 +39,15 @@ const PROVIDERS = [
     logo: 'https://espreso.tv/favicon.ico',
   },
   {
+    id: 'radiosvoboda',
+    type: 'rss',
+    name: 'Радіо Свобода',
+    description: 'Сайт новин України та світу, відео, репортажів та аналітики.',
+    url: 'https://www.radiosvoboda.org/api/zrqiteuuir',
+    homepage: 'https://www.radiosvoboda.org',
+    logo: 'https://www.radiosvoboda.org/Content/responsive/RFE/img/webApp/favicon.ico',
+  },
+  {
     id: 'unian',
     type: 'rss',
     name: 'УНІАН',
