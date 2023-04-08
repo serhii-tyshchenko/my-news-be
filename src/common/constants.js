@@ -134,6 +134,65 @@ const PROVIDERS = [
     homepage: 'https://defence-ua.com',
     logo: 'https://defence-ua.com/images/favicon.png',
   },
+  {
+    id: 'techradar',
+    type: 'rss',
+    name: 'TechRadar',
+    description:
+      'The latest technology news and reviews, covering computing, home entertainment systems, gadgets and more',
+    url: 'https://www.techradar.com/rss',
+    homepage: 'https://www.techradar.com',
+    logo: 'https://www.techradar.com/favicon.ico',
+  },
+  {
+    id: 'techcrunch',
+    type: 'rss',
+    name: 'TechCrunch',
+    description:
+      'TechCrunch is a leading technology media property, dedicated to obsessively profiling startups, reviewing new Internet products, and breaking tech news.',
+    url: 'https://techcrunch.com/feed/',
+    homepage: 'https://techcrunch.com',
+    logo: 'https://s0.wp.com/wp-content/themes/vip/techcrunch-2013/assets/images/favicon.png',
+  },
+  {
+    id: 'theverge',
+    type: 'rss',
+    name: 'The Verge',
+    description:
+      'The Verge covers the intersection of technology, science, art, and culture.',
+    url: 'https://www.theverge.com/rss/index.xml',
+    homepage: 'https://www.theverge.com',
+    logo: 'https://cdn.vox-cdn.com/uploads/chorus_asset/file/10037647/verge_favicon.0.png',
+  },
+  {
+    id: 'spacecom',
+    type: 'rss',
+    name: 'Space.com',
+    description:
+      'Space.com is where humanity’s journey to new and exciting worlds is transmitted back down to Earth. Where we vicariously explore the cosmos with astronauts, ...',
+    url: 'https://www.space.com/feeds/all',
+    homepage: 'https://www.space.com',
+    logo: 'https://www.space.com/favicon.ico',
+  },
+  {
+    id: 'wired',
+    type: 'rss',
+    name: 'Wired',
+    description: 'Wired is where tomorrow is realized.',
+    url: 'https://www.wired.com/feed/rss',
+    homepage: 'https://www.wired.com',
+    logo: 'https://www.wired.com/favicon.ico',
+  },
+  {
+    id: 'devto',
+    type: 'rss',
+    name: 'DEV Community',
+    description:
+      'A constructive and inclusive social network for software developers. With you every step of your journey.',
+    url: 'https://dev.to/feed',
+    homepage: 'https://dev.to',
+    logo: 'https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png',
+  },
 ];
 
 const DEFAULT_POST_LIMIT = 10;
