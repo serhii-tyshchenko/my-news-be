@@ -15,9 +15,10 @@ module.exports = {
     }
     const response = await parse(providerUrl);
     const data = response.items.slice(0, postLimit).map((item) => ({
-      title: decode(item.title),
+      title: decode(item.title).trim(),
       link: item.link,
       created: item.created,
+      enclosures: item.enclosures,
     }));
     res.json(data);
     res.end();
