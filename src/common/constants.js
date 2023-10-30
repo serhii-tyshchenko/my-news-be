@@ -230,6 +230,17 @@ const PROVIDERS = [
     logo: 'https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png',
     category: CATEGORY_ID.SOFTWARE_DEVELOPMENT,
   },
+  {
+    id: 'dou',
+    type: 'rss',
+    name: 'DOU',
+    description:
+      'Новини, статті, дайджести, блоги, тренди, форум – для всіх, хто цікавиться розробкою програмного забезпечення.',
+    url: 'https://dou.ua/feed/',
+    homepage: 'https://dou.ua',
+    logo: 'https://s.dou.ua/assets/img/icon.png',
+    category: CATEGORY_ID.SOFTWARE_DEVELOPMENT,
+  },
 ];
 
 const DEFAULT_POST_LIMIT = 10;
