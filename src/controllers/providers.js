@@ -2,7 +2,6 @@ const { PROVIDERS } = require('../common/constants');
 
 module.exports = {
   list(req, res) {
-    res.json(PROVIDERS);
-    res.end();
+    res.status(200).send(PROVIDERS).end();
   },
 };

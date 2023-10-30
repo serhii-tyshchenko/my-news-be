@@ -1,3 +1,20 @@
+const CATEGORY_ID = {
+  NEWS: 'news',
+  TECH: 'tech',
+  SOFTWARE_DEVELOPMENT: 'software_development',
+  SCIENCE: 'science',
+  SPACE: 'space',
+  MILITARY: 'military',
+};
+
+const CATEGORIES = [
+  {
+    id: CATEGORY_ID.NEWS,
+    name: 'Новини',
+    description: 'Новини України та світу',
+    icon: 'newspaper',
+  },
+];
 const PROVIDERS = [
   {
     id: 'censor',
@@ -8,6 +25,7 @@ const PROVIDERS = [
     url: 'https://static.censor.net/censornet/rss/rss_uk_news.xml',
     homepage: 'https://censor.net.ua',
     logo: 'https://static.censor.net/censornet_mobile/images/logo/uk/favicon-bg.svg',
+    category: CATEGORY_ID.NEWS,
   },
   {
     id: 'lb',
@@ -17,6 +35,7 @@ const PROVIDERS = [
     url: 'https://lb.ua/rss/ukr/news.xml',
     homepage: 'https://lb.ua',
     logo: 'https://lb.ua/favicon.ico',
+    category: CATEGORY_ID.NEWS,
   },
   {
     id: 'nv',
@@ -27,6 +46,7 @@ const PROVIDERS = [
     url: 'https://nv.ua/ukr/rss/all.xml',
     homepage: 'https://nv.ua',
     logo: 'https://nv.ua/favicon/android-icon-36x36.png?new',
+    category: CATEGORY_ID.NEWS,
   },
   {
     id: 'espreso',
@@ -37,6 +57,7 @@ const PROVIDERS = [
     url: 'https://espreso.tv/rss',
     homepage: 'https://espreso.tv',
     logo: 'https://espreso.tv/favicon.ico',
+    category: CATEGORY_ID.NEWS,
   },
   {
     id: 'radiosvoboda',
@@ -46,6 +67,7 @@ const PROVIDERS = [
     url: 'https://www.radiosvoboda.org/api/zrqiteuuir',
     homepage: 'https://www.radiosvoboda.org',
     logo: 'https://www.radiosvoboda.org/Content/responsive/RFE/img/webApp/favicon.ico',
+    category: CATEGORY_ID.NEWS,
   },
   {
     id: 'unian',
@@ -56,6 +78,7 @@ const PROVIDERS = [
     url: 'https://rss.unian.net/site/news_ukr.rss',
     homepage: 'https://www.unian.ua',
     logo: 'https://www.unian.ua/favicon.ico',
+    category: CATEGORY_ID.NEWS,
   },
   {
     id: 'obozrevatel',
@@ -65,6 +88,7 @@ const PROVIDERS = [
     url: 'https://www.obozrevatel.com/ukr/out/rss/lastnews.xml',
     homepage: 'https://www.obozrevatel.com',
     logo: 'https://cdn.obozrevatel.com/news/img/favicons/favicon.ico',
+    category: CATEGORY_ID.NEWS,
   },
   {
     id: 'liga',
@@ -75,6 +99,7 @@ const PROVIDERS = [
     url: 'https://www.liga.net/news/all/rss.xml',
     homepage: 'https://www.liga.net',
     logo: 'https://www.liga.net/design/images/favicon.ico',
+    category: CATEGORY_ID.NEWS,
   },
   {
     id: 'rbc',
@@ -85,6 +110,7 @@ const PROVIDERS = [
     url: 'https://www.rbc.ua/static/rss/all.ukr.rss.xml',
     homepage: 'https://www.rbc.ua',
     logo: 'https://www.rbc.ua/static/news/imgs/favicon.ico',
+    category: CATEGORY_ID.NEWS,
   },
   {
     id: 'gordon',
@@ -95,6 +121,7 @@ const PROVIDERS = [
     url: 'https://gordonua.com/ukr/xml/rss_category/politics.html',
     homepage: 'https://gordonua.com',
     logo: 'https://gordonua.com/favicon.ico',
+    category: CATEGORY_ID.NEWS,
   },
   {
     id: 'tsn',
@@ -105,6 +132,7 @@ const PROVIDERS = [
     url: 'https://tsn.ua/rss/full.rss',
     homepage: 'https://tsn.ua',
     logo: 'https://tsn.ua/favicon.svg',
+    category: CATEGORY_ID.NEWS,
   },
   {
     id: 'armyinform',
@@ -114,6 +142,7 @@ const PROVIDERS = [
     url: 'https://armyinform.com.ua/feed/',
     homepage: 'https://armyinform.com.ua',
     logo: 'https://armyinform.com.ua/favicon.ico',
+    category: CATEGORY_ID.MILITARY,
   },
   {
     id: 'militarnyj',
@@ -123,6 +152,7 @@ const PROVIDERS = [
     url: 'https://mil.in.ua/uk/news/feed/',
     homepage: 'https://mil.in.ua',
     logo: 'https://mil.in.ua/wp-content/themes/military/favicon.png',
+    category: CATEGORY_ID.MILITARY,
   },
   {
     id: 'defense_express',
@@ -133,6 +163,7 @@ const PROVIDERS = [
     url: 'https://defence-ua.com/rss/feed.xml',
     homepage: 'https://defence-ua.com',
     logo: 'https://defence-ua.com/images/favicon.png',
+    category: CATEGORY_ID.MILITARY,
   },
   {
     id: 'techradar',
@@ -143,6 +174,7 @@ const PROVIDERS = [
     url: 'https://www.techradar.com/rss',
     homepage: 'https://www.techradar.com',
     logo: 'https://www.techradar.com/favicon.ico',
+    category: CATEGORY_ID.TECH,
   },
   {
     id: 'techcrunch',
@@ -153,6 +185,7 @@ const PROVIDERS = [
     url: 'https://techcrunch.com/feed/',
     homepage: 'https://techcrunch.com',
     logo: 'https://s0.wp.com/wp-content/themes/vip/techcrunch-2013/assets/images/favicon.png',
+    category: CATEGORY_ID.TECH,
   },
   {
     id: 'theverge',
@@ -163,6 +196,7 @@ const PROVIDERS = [
     url: 'https://www.theverge.com/rss/index.xml',
     homepage: 'https://www.theverge.com',
     logo: 'https://cdn.vox-cdn.com/uploads/chorus_asset/file/10037647/verge_favicon.0.png',
+    category: CATEGORY_ID.TECH,
   },
   {
     id: 'spacecom',
@@ -173,6 +207,7 @@ const PROVIDERS = [
     url: 'https://www.space.com/feeds/all',
     homepage: 'https://www.space.com',
     logo: 'https://www.space.com/favicon.ico',
+    category: CATEGORY_ID.SPACE,
   },
   {
     id: 'wired',
@@ -182,6 +217,7 @@ const PROVIDERS = [
     url: 'https://www.wired.com/feed/rss',
     homepage: 'https://www.wired.com',
     logo: 'https://www.wired.com/favicon.ico',
+    category: CATEGORY_ID.TECH,
   },
   {
     id: 'devto',
@@ -192,6 +228,7 @@ const PROVIDERS = [
     url: 'https://dev.to/feed',
     homepage: 'https://dev.to',
     logo: 'https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png',
+    category: CATEGORY_ID.SOFTWARE_DEVELOPMENT,
   },
 ];
 
