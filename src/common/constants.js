@@ -5,6 +5,8 @@ const CATEGORY_ID = {
   SCIENCE: 'science',
   SPACE: 'space',
   MILITARY: 'military',
+  SPORT: 'sport',
+  BUSINESS: 'business',
 };
 
 const CATEGORIES = [
@@ -240,6 +242,16 @@ const PROVIDERS = [
     homepage: 'https://dou.ua',
     logo: 'https://s.dou.ua/assets/img/icon.png',
     category: CATEGORY_ID.SOFTWARE_DEVELOPMENT,
+  },
+  {
+    id: 'censor_business',
+    type: 'rss',
+    name: 'Бізнес.Цензор',
+    description: 'Найсвіжіші новини про бізнес та економіку',
+    url: 'https://static.censor.net/biz/rss/rss_uk_news.xml',
+    homepage: 'https://biz.censor.net',
+    logo: 'https://static.censor.net/biz/images/logo/uk/favicon-bg.svg',
+    category: CATEGORY_ID.BUSINESS,
   },
 ];
 
