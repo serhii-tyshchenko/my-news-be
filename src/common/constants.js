@@ -282,6 +282,18 @@ const PROVIDERS_SOFTWARE_DEVELOPMENT = [
     category: CATEGORY_ID.SOFTWARE_DEVELOPMENT,
     language: LANGUAGE.UK,
   },
+  {
+    id: 'freecodecamp',
+    type: 'rss',
+    name: 'freeCodeCamp',
+    description:
+      'Learn to code at home. Build projects. Earn certifications. Since 2014, more than 40,000 freeCodeCamp.org graduates have gotten jobs at tech companies including Google, Apple, Amazon, and Microsoft.',
+    url: 'https://www.freecodecamp.org/news/rss/',
+    homepage: 'https://www.freecodecamp.org',
+    logo: 'https://cdn.freecodecamp.org/universal/favicons/favicon.ico',
+    category: CATEGORY_ID.SOFTWARE_DEVELOPMENT,
+    language: LANGUAGE.EN,
+  },
 ];
 
 const PROVIDERS_BUSINESS = [
