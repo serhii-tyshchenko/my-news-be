@@ -1,6 +1,8 @@
 const fs = require('fs');
+const path = require('path');
 
-const rawdata = fs.readFileSync('./data/providers.json');
+const filePath = path.join(process.cwd(), 'data', 'users.json');
+const rawdata = fs.readFileSync(filePath);
 
 const PROVIDERS = JSON.parse(rawdata);
 
