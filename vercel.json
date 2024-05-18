@@ -12,5 +12,10 @@
       "src": "/(.*)",
       "dest": "src/app.js"
     }
-  ]
+  ],
+  "functions": {
+    "src/common/constants.js": {
+      "includeFiles": "data/providers.json"
+    }
+  }
 }
