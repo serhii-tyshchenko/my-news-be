@@ -1,26 +1,34 @@
 const parse = require('../parse');
-const { decode } = require('html-entities');
 
 const { DEFAULT_POST_LIMIT } = require('../common/constants');
-const { getProviderUrl } = require('../common/utils');
+const { getProviderUrl, transformData } = require('../common/utils');
 
 module.exports = {
   async retrieve(req, res) {
-    const postLimit = req.query.limit || DEFAULT_POST_LIMIT;
-    const provider = req.query.provider;
-    const providerUrl = getProviderUrl(provider);
-    if (!providerUrl) {
-      res.status(400).send('Invalid provider');
-      return;
+    try {
+      const postLimit = req.query.limit || DEFAULT_POST_LIMIT;
+      const provider = req.query.provider;
+      const providerUrl = getProviderUrl(provider);
+
+      if (!providerUrl) {
+        return res.status(400).json({ error: 'Invalid provider' });
+      }
+
+      const response = await parse(providerUrl);
+
+      if (!response || !response.items) {
+        return res.status(500).json({ error: 'Failed to fetch data' });
+      }
+
+      const data = transformData(response.items, postLimit);
+
+      return res.status(200).json({
+        data,
+        count: response?.items.length || 0,
+      });
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ error: 'An error occurred' });
     }
-    const response = await parse(providerUrl);
-    const data = response.items.slice(0, postLimit).map((item) => ({
-      title: decode(item.title).trim(),
-      link: item.link,
-      created: item.created,
-      enclosures: item.enclosures,
-    }));
-    res.json(data);
-    res.end();
   },
 };
