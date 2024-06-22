@@ -92,7 +92,7 @@
         "type": "rss",
         "name": "РБК-Україна",
         "description": "Головні новини України та світу сьогодні, політичні та аналітичні статті, новини економіки та курси валют, інтерв'ю, точки зору, новини життя на порталі РБК-Україна.",
-        "url": "https: //www.rbc.ua/static/rss/all.ukr.rss.xml",
+        "url": "https://www.rbc.ua/static/rss/all.ukr.rss.xml",
         "homepage": "https://www.rbc.ua",
         "logo": "https://www.rbc.ua/static/news/imgs/favicon.ico",
         "category": "news",
