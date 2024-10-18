@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/', (req, res) =>
   res.status(200).send({
-    message: 'Welcome to the News API v.1.2.1!',
+    message: 'Welcome to the News API v.1.2.2!',
   })
 );
 
