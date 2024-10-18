@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/', (req, res) =>
   res.status(200).send({
-    message: 'Welcome to the News API v.1.2.2!',
+    message: 'Welcome to the News Rover API v.1.3.0!',
   })
 );
 
