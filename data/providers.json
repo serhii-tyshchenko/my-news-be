@@ -295,5 +295,38 @@
         "logo": "https://www.bbc.com/favicon.ico",
         "category": "business",
         "language": "en"
+    },
+    {
+        "id": "site_ua",
+        "type": "rss",
+        "name": "Site.UA",
+        "description": "Головнi новини України i платформа для блогів найвідоміших авторів українського сегменту Фейсбука. Тексти про найгостріші проблеми сучасної України.",
+        "url": "https://site.ua/rss.xml",
+        "homepage": "https://site.ua",
+        "logo": "https://site.ua/assets/images/favicon/favicon.ico",
+        "category": "blogs",
+        "language": "uk"
+    },
+    {
+        "id": "texty",
+        "type": "rss",
+        "name": "Texty.org.ua",
+        "description": "Незалежний медіа-проект, який пише про важливі теми, які впливають на життя людей в Україні.",
+        "url": "https://texty.org.ua/articles/feed.xml",
+        "homepage": "https://texty.org.ua",
+        "logo": "https://texty.org.ua/static/core/favicon-196.png",
+        "category": "blogs",
+        "language": "uk"
+    },
+    {
+        "id": "novynarnia",
+        "type": "rss",
+        "name": "Новинарня",
+        "description": "Новини України, що воює",
+        "url": "https://novynarnia.com/feed/",
+        "homepage": "https://novynarnia.com",
+        "logo": "https://novynarnia.com/wp-content/uploads/2023/08/cropped-avatar-novynarnya-192x192.jpg",
+        "category": "news",
+        "language": "uk"
     }
 ]
