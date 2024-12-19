@@ -1,5 +1,6 @@
 const swaggerJSDoc = require('swagger-jsdoc');
 const path = require('path');
+const { PORT } = require('../common/constants');
 
 const routerPath = path.join(__dirname, 'components/paths/*.yaml');
 const schemaPath = path.join(__dirname, 'components/schemas/*.yaml');
@@ -14,7 +15,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:4000',
+        url: process.env.VERCEL_URL || `http://localhost:${PORT}`,
       },
     ],
   },
