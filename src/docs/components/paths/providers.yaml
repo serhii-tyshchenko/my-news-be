@@ -2,6 +2,8 @@ paths:
   /providers:
     get:
       summary: Get RSS providers
+      tags:
+        - Providers
       responses:
         200:
           description: Successfully fetched RSS providers

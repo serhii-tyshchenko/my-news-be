@@ -2,6 +2,8 @@ paths:
   /rss:
     get:
       summary: Get RSS feed
+      tags:
+        - RSS
       parameters:
         - in: query
           name: limit
