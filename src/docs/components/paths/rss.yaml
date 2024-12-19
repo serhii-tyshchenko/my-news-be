@@ -1,0 +1,28 @@
+paths:
+  /rss:
+    get:
+      summary: Get RSS feed
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          required: false
+          description: Limit the number of posts in the feed
+        - in: query
+          name: url
+          schema:
+            type: string
+          required: true
+          description: URL of the RSS feed
+      responses:
+        200:
+          description: Successfully fetched RSS feed
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RSS'
+        500:
+          description: Failed to fetch RSS feed

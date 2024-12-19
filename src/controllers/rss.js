@@ -7,12 +7,12 @@ module.exports = {
   async retrieve(req, res) {
     try {
       const postLimit = req.query.limit || DEFAULT_POST_LIMIT;
-      const url = req.query.url;
+      const url = decodeURIComponent(req.query.url);
 
       const response = await parse(url);
 
       if (!response || !response.items) {
-        return res.status(500).json({ error: 'Failed to fetch data' });
+        return res.status(500).json({ error: 'Failed to fetch RSS feed' });
       }
 
       const data = transformData(response.items, postLimit);
