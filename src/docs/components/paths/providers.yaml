@@ -1,0 +1,15 @@
+paths:
+  /providers:
+    get:
+      summary: Get RSS providers
+      responses:
+        200:
+          description: Successfully fetched RSS providers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Provider'
+        500:
+          description: Failed to fetch RSS providers
