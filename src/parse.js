@@ -1,7 +1,11 @@
 const { XMLParser } = require('fast-xml-parser');
 const axios = require('axios');
 
-const { normalizeDate, normalizeText } = require('./utils');
+const {
+  normalizeDate,
+  normalizeTitle,
+  normalizeDescription,
+} = require('./utils');
 
 const parse = async (url, config) => {
   if (!/(^http(s?):\/\/[^\s$.?#].[^\s]*)/i.test(url)) return null;
@@ -42,11 +46,12 @@ const parse = async (url, config) => {
 
     const obj = {
       id: val.guid && val.guid.$text ? val.guid.$text : val.id,
-      title: normalizeText(
+      title: normalizeTitle(
         val.title && val.title.$text ? val.title.$text : val.title
       ),
-      description:
-        val.summary && val.summary.$text ? val.summary.$text : val.description,
+      description: normalizeDescription(
+        val.summary && val.summary.$text ? val.summary.$text : val.description
+      ),
       link: val.link && val.link.href ? val.link.href : val.link,
       author:
         val.author && val.author.name ? val.author.name : val['dc:creator'],
