@@ -1,4 +1,14 @@
-const normalizeText = (text) => text.normalize('NFKD').trim();
+const normalizeTitle = (text) => text.normalize('NFKD').trim();
+
+const normalizeDescription = (description) => {
+  const MAX_LENGTH = 250;
+  if (description.length <= MAX_LENGTH) return description;
+  const strippedDescription = description.replace(/<[^>]*>/g, '').trim();
+  const truncatedDescription = strippedDescription.slice(0, MAX_LENGTH);
+  return truncatedDescription.endsWith('...')
+    ? truncatedDescription
+    : `${truncatedDescription}...`;
+};
 
 const normalizeDate = (date) => {
   const daysMap = {
@@ -49,6 +59,7 @@ const normalizeDate = (date) => {
 };
 
 module.exports = {
-  normalizeText,
+  normalizeTitle,
+  normalizeDescription,
   normalizeDate,
 };
