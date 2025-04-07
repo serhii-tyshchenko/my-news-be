@@ -2,8 +2,10 @@ const normalizeTitle = (text) => text.normalize('NFKD').trim();
 
 const normalizeDescription = (description) => {
   const MAX_LENGTH = 250;
-  if (description.length <= MAX_LENGTH) return description;
   const strippedDescription = description.replace(/<[^>]*>/g, '').trim();
+
+  if (strippedDescription.length <= MAX_LENGTH) return description;
+
   const truncatedDescription = strippedDescription.slice(0, MAX_LENGTH);
   return truncatedDescription.endsWith('...')
     ? truncatedDescription
