@@ -4,7 +4,7 @@ const normalizeDescription = (description) => {
   const MAX_LENGTH = 250;
   const strippedDescription = description.replace(/<[^>]*>/g, '').trim();
 
-  if (strippedDescription.length <= MAX_LENGTH) return description;
+  if (strippedDescription.length <= MAX_LENGTH) return strippedDescription;
 
   const truncatedDescription = strippedDescription.slice(0, MAX_LENGTH);
   return truncatedDescription.endsWith('...')
