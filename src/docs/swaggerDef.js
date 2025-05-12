@@ -10,7 +10,7 @@ const options = {
     openapi: '3.0.0',
     info: {
       title: 'My News API',
-      version: '1.4.0',
+      version: '1.4.5',
       description: 'API documentation for My News',
     },
     servers: [
