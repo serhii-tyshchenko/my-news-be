@@ -4,6 +4,13 @@ paths:
       summary: Get RSS providers
       tags:
         - Providers
+      parameters:
+        - in: query
+          name: search
+          schema:
+            type: string
+          description: Search term to filter providers by any field (case-insensitive)
+          required: false
       responses:
         200:
           description: Successfully fetched RSS providers
