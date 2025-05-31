@@ -5,7 +5,7 @@ const {
   normalizeDate,
   normalizeTitle,
   normalizeDescription,
-} = require('./utils');
+} = require('./common/utils');
 
 const parse = async (url, config) => {
   if (!/(^http(s?):\/\/[^\s$.?#].[^\s]*)/i.test(url)) return null;
