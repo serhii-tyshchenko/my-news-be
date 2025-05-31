@@ -1,7 +1,7 @@
 paths:
   /providers:
     get:
-      summary: Get RSS providers
+      summary: Get providers
       tags:
         - Providers
       parameters:
@@ -13,7 +13,7 @@ paths:
           required: false
       responses:
         200:
-          description: Successfully fetched RSS providers
+          description: Successfully fetched providers
           content:
             application/json:
               schema:
@@ -21,4 +21,28 @@ paths:
                 items:
                   $ref: '#/components/schemas/Provider'
         500:
-          description: Failed to fetch RSS providers
+          description: Failed to fetch providers
+  /providers/{id}:
+    get:
+      summary: Get provider by ID
+      description: Retrieve a single provider by its unique identifier.
+      tags:
+        - Providers
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: The unique identifier of the provider.
+      responses:
+        200:
+          description: Successfully fetched the provider
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Provider'
+        404:
+          description: Provider not found
+        500:
+          description: Failed to fetch provider
