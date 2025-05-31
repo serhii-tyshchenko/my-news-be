@@ -1,16 +1,9 @@
-const {
-  getProviders,
-  getProviderById,
-  searchProviders,
-} = require('../services/db');
+const { getCategories, getCategoryProviders } = require('../services/db');
 
 module.exports = {
   async list(req, res) {
     try {
-      const { search } = req.query;
-      const data = search
-        ? await searchProviders(search)
-        : await getProviders();
+      const data = await getCategories();
       res.status(200).json(data);
     } catch (error) {
       console.error(error);
@@ -20,9 +13,9 @@ module.exports = {
   async getById(req, res) {
     try {
       const { id } = req.params;
-      const data = await getProviderById(id);
+      const data = await getCategoryProviders(id);
       if (!data) {
-        return res.status(404).json({ error: 'Provider not found' });
+        return res.status(404).json({ error: 'Category not found' });
       }
       res.status(200).json(data);
     } catch (error) {

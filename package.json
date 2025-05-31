@@ -1,11 +1,12 @@
 {
   "name": "my-news-be",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "My News API Backend",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "test": "jest"
   },
   "author": "Serhii Tyshchenko",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "nodemon": "^3.1.0"
   }
 }

@@ -1,12 +1,11 @@
 const parse = require('../parse');
 
-const { DEFAULT_POST_LIMIT } = require('../common/constants');
 const { transformData } = require('../common/utils');
 
 module.exports = {
   async retrieve(req, res) {
     try {
-      const postLimit = req.query.limit || DEFAULT_POST_LIMIT;
+      const postLimit = req.query.limit;
       const url = decodeURIComponent(req.query.url);
 
       const response = await parse(url);
